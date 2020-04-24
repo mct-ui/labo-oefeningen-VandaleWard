@@ -152,12 +152,26 @@ blockquote * {
     line-height: inherit;
 }
 
-figcaption {
-    font-weight: 400;
-    font-size: 12px;
+figure {
+    position: relative;
+    float: left;
+  }
+
+  figcaption {
+    background-color: white;
+    color: black;
+    max-width: 200px;
+    font-size: 10px;
+    display: block;
+
+    position: absolute;
+    top: 4px;
+    right:8px;
+    padding:10px;
+    border-right:4px solid #0053FB;
     line-height: 16px;
-    margin-top: 8px;
-}
+    text-align: right;
+  } 
 
 hr {
     border: 0;
@@ -401,6 +415,36 @@ a:focus {
 }
 
 /*
+      Component: CTA link
+      ---
+      Small cta link with custom animation
+  */
+  
+  .c-link-cta { 
+    flex: 1 1 auto;
+    margin: 10px;
+    padding: 16px 40px 16px 40px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 3px #DBEDFF;
+    background-image: linear-gradient(to right, #033AA7 0%, #0053FB 51%, #033AA7 100%);
+  }
+
+  .c-link-cta:hover {
+    background-position: right center; /* change the direction of the change here */
+  }
+
+  .c-link-cta,
+  .c-link-cta:visited,
+  .c-link-cta:active {
+    color: white;
+  }
+/*
       Component: Nav
       ---
       Main navigation of the site
@@ -466,6 +510,7 @@ a:focus {
 @media (min-width: 992px) {
     .c-nav{
         font-size: 12px;
+        padding: 16px;
     }
     .c-header {
         display: flex;
@@ -478,7 +523,8 @@ a:focus {
         margin-right: -16px;
     }
     .c-nav__link {
-        padding: 8px 24px;
+        padding: 16px 24px;
+        line-height: 24px;
     }
     .c-header__nav {
         display: block;
